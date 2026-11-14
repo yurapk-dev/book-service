@@ -2,11 +2,11 @@ import * as service from '../service/bookService.js'
 
 export const addBook = async (req, res) => {
     const book = await service.addBook(req.body)
-    return (book) ? res.message('true') : res.status(404).send()
+    return (book) ? res.json(true) : res.status(404).send()
 }
 
-export const getBook = async (req, res) => {
-    const book = await service.getBook(req.params.isbn)
+export const findBookByIsbn = async (req, res) => {
+    const book = await service.findBookByIsbn(req.params.isbn)
     return (book) ? res.json(book) : res.status(404).send()
 }
 

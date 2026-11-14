@@ -1,0 +1,25 @@
+import {sequelize} from "../config/database.js";
+import {DataTypes} from "sequelize";
+
+const Author = sequelize.define("Author", {
+        name: {
+            type: DataTypes.STRING,
+            primaryKey: true,
+            allowNull: false,
+            validate: {
+                notEmpty: true
+            }
+        },
+        birth_date: {
+            type: DataTypes.DATEONLY,
+            allowNull: false,
+            validate: {
+                notEmpty: true
+            }
+        }
+    },
+    {
+        tableName: "author"
+
+    })
+export default Author;

@@ -4,7 +4,7 @@ import * as controller from '../controller/bookController.js'
 const bookRoutes = Router()
 
 bookRoutes.post('/book/', controller.addBook)
-bookRoutes.get('/book/:isbn', controller.getBook)
+bookRoutes.get('/book/:isbn', controller.findBookByIsbn)
 bookRoutes.delete('/book/:isbn', controller.removeBook)
 bookRoutes.patch('/book/:isbn/title/:title', controller.updateBookTitle)
 bookRoutes.get('/books/author/:author', controller.findBooksByAuthor)
